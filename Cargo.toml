@@ -1,6 +1,20 @@
 [package]
 name = "news-letter-api"
 version = "0.1.0"
+authors = ["Bomen Derick"]
 edition = "2021"
 
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "news-letter-api"
+
 [dependencies]
+actix-web = "4.9.0"
+tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread"] }
+serde = { version = "1.0.217", features = ["derive"] }
+
+[dev-dependencies]
+reqwest = "0.12.12"
