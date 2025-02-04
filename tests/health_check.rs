@@ -46,6 +46,8 @@ async fn subscribe_returns_a_200_for_valid_form_data() {
         .send()
         .await
         .expect("Failed to send request.");
+
+    assert_eq!(200, response.status().as_u16());
 }
 
 #[tokio::test]
